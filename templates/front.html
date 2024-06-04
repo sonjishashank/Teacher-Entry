@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Minimum height to fill viewport */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            margin: auto; /* Center the container horizontally */
+            margin-top: 50px; /* Add space from top */
+            margin-bottom: 50px; /* Add space from bottom */
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin: -20px -30px 20px -30px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .input-field,
+        select {
+            width: calc(100% - 10px);
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 0 auto 10px auto; /* Added margin for uniform spacing */
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus,
+        select:focus {
+            border-color: #495057;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 15px; /* Added margin for separation from the last input */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enter Student Information</h1>
+        </header>
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" class="input-field" placeholder="Enter class" required>
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" class="input-field" placeholder="Enter student ID" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Select Subject:</label>
+                <select id="subject" name="subject" class="input-field" required>
+                    <option value="" disabled selected>Select Your Preferred Subject</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Science">Science</option>
+                    <option value="ಕನ್ನಡ">ಕನ್ನಡ</option>
+                    <option value="English">English</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="marks">Enter Marks:</label>
+                <input type="number" id="marks" name="marks" class="input-field" placeholder="Enter marks" required>
+            </div>
+            <div class="form-group">
+                <label for="testNo">Test Number:</label>
+                <input type="number" id="testNo" name="testNo" class="input-field" placeholder="Enter test number" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" class="input-field" placeholder="Enter topic" required>
+            </div>
+            <div class="form-group">
+                <label for="Study Hours">Study Hours:</label>
+                <input type="number" id="Study Hours" name="Study Hours" class="input-field" placeholder="Enter Study Hours" required>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
