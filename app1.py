@@ -33,7 +33,8 @@ def create_or_update_table(class_name):
             Column('marks', Integer),
             Column('test_no', Integer),
             Column('topic', String),
-            Column('study_hours', Integer)
+            Column('study_hours', Integer),
+            Column('basic_requirements', String),  # New column added
         )
         meta.create_all(engine)
     else:
@@ -55,6 +56,7 @@ def submit():
     test_no = request.form['testNo']
     topic = request.form['topic']
     study_hours = request.form['Study Hours']
+    basic_requirements = request.form['Basic Requirements']  # Get value for new column
 
     # Create or update the table
     table = create_or_update_table(class_name)
@@ -66,7 +68,8 @@ def submit():
         'marks': [marks],
         'test_no': [test_no],
         'topic': [topic],
-        'study_hours': [study_hours]
+        'study_hours': [study_hours],
+        'basic_requirements': [basic_requirements],  # Include new column data
     })
 
     # Insert data into the database
